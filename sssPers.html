@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#FF0000">
+  <title>Persona</title>
+
+  <script>
+    function updateMetaThemeColor() {
+      // Определить предпочтение пользователя для темного режима
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const themeColorMetaTag = document.querySelector('meta[name=theme-color]');
+
+      if (isDarkMode) {
+        themeColorMetaTag.setAttribute('content', '#000000'); // Темный режим цвета
+      } else {
+        themeColorMetaTag.setAttribute('content', '#ffffff'); // Светлый режим цвета
+      }
+    }
+
+    // Инициализировать при загрузке
+    updateMetaThemeColor();
+
+    // Обновить при изменении схемы
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      updateMetaThemeColor();
+    });
+  </script>
+
+  <!-- мои css -->
+
+  <!-- это бутстрап -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+  <!-- это бутстрап -->
+
+  <link rel="stylesheet" href="Diz.css">
+  <link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- мои css -->
+  <!-- начало подключения картинок и манифеста для PWA -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/wQFvJZM/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/88mhQgz/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/Fq721b5/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="manifest" href="/PersonaPWA.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#000000">
+  <!-- конец подключения PWA и манифеста  -->
+  <!-- Для плавных анимаций текста, кнопок и т.д. -->
+  <script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <!-- обычный jquery для плавного появления страницы -->
+  <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+  <!-- обычный jquery для плавного появления страницы -->
+
+
+</head>
+
+<body>
+
+  <!-- кнопка вверх (наверное) -->
+  <div class="btn-up btn-up_hide"></div>
+
+
+  <header>
+
+    <img class="logoP5R" src="https://i.ibb.co/5vL405N/logoP5R.png" alt="logoP5R"></a>
+
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav_menu_Persona">
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <h2 class="logo">
+        <a href="sssPers.html">PersonaTRC</a>
+      </h2>
+      <ul>
+        <li><a href="sssPers.html" class="transition">Главная страница</a>
+        <li class="accordion-section">
+          <input type="checkbox" id="characters-toggle" hidden>
+          <label for="characters-toggle" class="accordion-title">Персонажи</label>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="CharactersPerosona5.html">Играбельные персонажи</a></li>
+              <li><a href="#Confidants">Конфиданты</a></li>
+              <!-- <li>Персонаж 3</li> -->
+              <!-- Добавить дополнительные пункты здесь -->
+            </ul>
+          </div>
+        </li>
+        <!--target blank для открытия вкладки в отдельном окне, но пока не имеет-->
+        <li><a href="GalleryImageForP5R.html">Галерея</a>
+        <li><a href="PalaceMainDoc.html">Дворцы</a>
+        <li><a href="TheorycraftMainPage.html">Теорикрафт</a>
+        <li><a href="Vocabular.html">Словарь терминов</a>
+        <li><a href="#Compendium">Компендиум</a>
+        <li><a href="#Achivment">Достижения</a>
+      </ul>
+    </nav>
+    <div class="mask-content"></div>
+
+  </header>
+
+  <main class="mainBox">
+    <div>
+      <section id='steezy' class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="header-container">
+          <h1 class="preface">
+            <span class="TextPersona">Persona</span><span class="five">5</span>
+            <span class="d-inline-block d-sm-block">Royal</span>
+            <span class="TheorycraftLetter">Theorycraft</span>
+          </h1>
+        </div>
+        <img id="Persona5RoyalMainPicture" class="lazy" data-srcset="
+        https://i.ibb.co/Bg7sDVx/Persona5-Royal-Main-Picture-PHFor320.png 320w,
+        https://i.ibb.co/vd09DxD/Persona5-Royal-Main-Picture-PHFor768.png 768w,
+        https://i.ibb.co/X8STzL2/Persona5-Royal-Main-Picture-PHFor1024.png" sizes="(max-width: 320px) 280px,
+        (max-width: 768px) 720px,
+        960px" />
+        <div class="container">
+          <h1>Что такое Persona 5 Royal?</h1>
+          <p>Главный герой — обычный японский
+            школьник: ходит на учёбу, гуляет по городу, общается с друзьями, подрабатывает, где получится,
+            ведёт жизнь классического подростка. Геймплей в «реальном мире» очень расслабленный и напоминает визуальную
+            новеллу с элементами RPG. В школе надо отвечать на вопросы учителей, а в свободное время — просто изучать
+            разные уголки Токио, разговаривать с соратниками (в «Персоне» они зовутся конфидантами) и повышать
+            социальные навыки. Другое дело — Метаверс, параллельный мир человеческого подсознания, куда герои
+            отправляются, чтобы «воровать сердца» злодеев. Их целями становятся испорченные взрослые — те, кто
+            злоупотребляет своей властью, чтобы наживаться на других. У таких людей искажена внутренняя картина мира, а
+            потому их подсознание выглядит как огромный дворец, отражающий грехи своего владельца. Именно туда и
+            проникает протагонист со своей командой Фантомных воров: в каждом таком дворце им нужно найти и украсть
+            сокровище — символ тёмных желаний его хозяина. И если кража проходит успешно, то злодей в реальном мире сам
+            осознаёт свои преступления и сдаётся полиции.</p>
+          <img id="Persona5RoyalMainPicture" src="https://i.ibb.co/hR0nBT7/image-2024-05-16-02-22-52.png" />
+          <div id="extraContent" class="hidden-info">
+            <p>Геймплей в Метаверсе уже совсем другой: эта часть приключений Фантомов куда больше похожа на традиционную
+              JRPG с пошаговыми боями и сложной системой навыков. Тут герои борются с Тенями — монстрами, рождёнными из
+              человеческих страстей. А чтобы их одолеть, участники команды используют персоны — мистические сущности,
+              которые рождаются в душе у тех, кто не хочет закрывать глаза на окружающую несправедливость. У каждого
+              члена Фантомных воров своя уникальная персона, а вот у главного героя, Джокера, их может быть сколько
+              угодно. Протагонист их коллекционирует, скрещивает, переключает в бою</p>
+            <p>Пошаговые бои работают по схеме «камень-ножницы-бумага»: у любой Тени есть уязвимость к конкретному виду
+              урона. Крылатые враги обычно боятся пуль и воздушных заклинаний, огненные — замораживающих, и так далее.
+              Благодаря этому каждый бой похож на задачку: надо не бить чем попало, а разобраться, в чём слабость
+              противника. И при этом не попасть под удар самим, ведь у каждой (не совсем) из ваших персон тоже есть
+              ахиллесова пята.
+            </p>
+
+            <p>Глубокая система персонажей "Persona 5 Royal" требует нестандартного подхода к теорикрафтингу.
+              Взаимодействие с соратниками и строгая экономия времени добавляют уникальность разработке стратегий.
+              Фанаты теорикрафтят не только комбинации Персон, но и социальные аспекты, ища оптимальный путь развития.
+            </p> <img id="Persona5RoyalMainPicture" src="https://i.ibb.co/5Bf0n8k/maxresdefault.jpg" alt="maxresdefault"
+              border="0" /> <img id="Persona5RoyalMainPicture" src="https://i.ibb.co/4gt8VFF/scale-1200.jpg"
+              alt="scale-1200" border="0" /> <img id="Persona5RoyalMainPicture"
+              src="https://i.ibb.co/D4kStW7/scale-1200.jpg" alt="scale-1200" border="0">
+            <p>Минимакс в "Persona 5 Royal" является кульминацией геймплейной глубины, где каждый выбор
+              оценивается
+              на потенциальную выгоду и стоимость, что делает процесс теорикрафтинга еще более захватывающим и важным.
+            </p>
+          </div>
+          <button id="toggleButton" class="show-more">Подробнее</button>
+        </div>
+
+        <script>
+          document.getElementById('toggleButton').addEventListener('click', function () {
+            var extraContent = document.getElementById('extraContent');
+            if (extraContent.classList.contains('expanded')) {
+              extraContent.classList.remove('expanded');
+            } else {
+              extraContent.classList.add('expanded');
+            }
+          });
+        </script>
+        </article>
+    </div>
+
+    <script>
+
+
+    </script>
+  </main>
+
+  <script src="MainScrtpForPerson.js">
+  </script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous">БУТСТРАП-->
+  </script>
+  <footer>
+    <div class="footer-top-container">
+      <div class="left-side">
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Term and Conditions</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="right-side">
+
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="footer-bottom-container">
+      <div class="copyright">
+
+        <img src="https://i.ibb.co/5vL405N/logoP5R.png" width="100px" height="100px" alt="">
+        <p>2024</p>
+      </div>
+      <div class="social-media-icons">
+        <img src="https://i.ibb.co/gdmJqj5/youtube-1.png" alt="иконка ютуба">
+        <img src="https://i.ibb.co/p1FPRMZ/telegram.png" alt="иконка телеграмма">
+        <img src="https://i.ibb.co/N1MRj9R/vk.png" alt="иконка вк">
+      </div>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Characters</title>
+
+
+
+  <link rel="stylesheet" href="Diz.css">
+  <link rel="stylesheet" href="StyleForCharactersPage.css">
+  <link rel="stylesheet" href="animate.css">
+
+  <!-- Подключение DataTables -->
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+  <link rel="stylesheet" href="archivesP5R/DataTables/datatables.min.css" /> -->
+  <!--
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+  <script src="DataTables/datatables.min.js"></script> -->
+
+  <!-- начало подключения картинок и манифеста для PWA -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/PersonaPWA.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#000000">
+  <!-- конец подключения PWA и манифеста  -->
+
+  <!-- <script src="jq.min.js"></script> -->
+  <script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!-- Для плавного появления страницы (криво работает пока) -->
+  <!-- <script type="text/javascript"
+    src="archivesP5R/Dlya plavnogo poyvlenya stranitsy/ppcontent/js/jquery-1.4.1.min.js"></script> -->
+
+
+</head>
+
+<body>
+  <!-- кнопка вверх (наверное) -->
+  <div class="btn-up btn-up_hide"></div>
+  <header>
+    <img class="logoP5R" src="https://i.ibb.co/J50cr4F/logoP5R.png" alt="logo">
+
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav_menu_Persona">
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <h2 class="logo">
+        <a href="sssPers.html">Persona.ru</a>
+      </h2>
+      <ul>
+        <li><a href="sssPers.html" class="transition">Главная страница</a>
+        <li class="accordion-section">
+          <input type="checkbox" id="characters-toggle" hidden>
+          <label for="characters-toggle" class="accordion-title">Персонажи</label>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="CharactersPerosona5.html" target="_blank">Играбельные персонажи</a></li>
+              <li><a href="#Confidants" target="_blank">Конфиданты</a></li>
+              <!-- <li>Персонаж 3</li> -->
+              <!-- Добавить дополнительные пункты здесь -->
+            </ul>
+          </div>
+        </li>
+        <!--target blank для открытия вкладки в отдельном окне-->
+        <li><a href="GalleryImageForP5R.html">Галерея</a>
+        <li><a href="PalaceMainDoc.html">Дворцы</a>
+        <li><a href="TheorycraftMainPage.html">Теорикрафт</a>
+        <li><a href="Vocabular.html">Словарь терминов</a>
+        <li><a href="#Compendium">Компендиум</a>
+        <li><a href="#Achivment">Достижения</a>
+      </ul>
+    </nav>
+    <div class="mask-content"></div>
+
+  </header>
+
+
+  <div class="accordion">
+    <div class="accordion-toggle no-select">Играбельные персонажи <span class="accordion-hint">›</span> Persona 5 Royal
+    </div>
+
+    <div class="accordion-content-for-characters-list">
+      <!-- Содержимое первого аккордеона -->
+      <table class="characters-table" id="characters-table">
+        <tbody>
+          <!-- Строки с персонажами -->
+          <!-- Рен и Йоске -->
+          <tr>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page1.html" class="character-link">
+                <img src="https://i.ibb.co/z8scRmb/RenIcon.png" alt="Рен Амамия" class="character-icon">
+                <span class="character-name">Ren Amamiya</span>
+              </a>
+            </td>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page2.html" class="character-link">
+                <img src="https://i.ibb.co/tb0JCQf/Yuoske-Icon.png" alt="Йоске Китогава" class="character-icon">
+                <span class="character-name">Yosuke Kitagawa</span>
+              </a>
+            </td>
+          </tr>
+          <!-- Анн и Макото -->
+          <tr>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page1.html" class="character-link">
+                <img class="character-icon" src="https://i.ibb.co/pWd0Rbr/AnnIcon.png" alt="AnnIcon" />
+                <span class="character-name">Ann Takamaki</span>
+              </a>
+            </td>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page2.html" class="character-link">
+                <img src="https://i.ibb.co/MMJn7Bn/Makoto-Icon.png" alt="Макото Нииджима" class="character-icon">
+                <span class="character-name">Makoto Niijima</span>
+              </a>
+            </td>
+          </tr>
+          <!-- Рюджи и Моргана -->
+          <tr>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page1.html" class="character-link">
+                <img src="https://i.ibb.co/xMd0NRC/Ryuji-Icon.png" alt="Рюджи Сакамото" class="character-icon">
+                <span class="character-name">Ryuji Sakamoto</span>
+              </a>
+            </td>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="Morgana.html" class="character-link">
+                <img class="character-icon-Morgana" src="https://i.ibb.co/N3YGBfm/Morgana-Icon.png" alt="Моргана"
+                  class="character-icon">
+                <span class="character-name-Morgana">Morgana</span>
+              </a>
+            </td>
+          </tr>
+          <!-- Акечи и Хару -->
+          <tr>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page1.html" class="character-link">
+                <img class="character-icon" src="https://i.ibb.co/mbQ5ktC/Akechi-Icon.png" alt="Akechi-Icon" />
+                <span class="character-name">Goro Akechi</span>
+              </a>
+            </td>
+            <td data-label="Персонаж: Рен Амамия">
+              <a href="link-to-page1.html" class="character-link">
+                <img class="character-icon-Haru" src="https://i.ibb.co/KLTr4Dp/HaruIcon.png" alt="Хару Окумура"
+                  class="character-icon">
+                <span class="character-name-Haru">Haru Okumura</span>
+              </a>
+            </td>
+          </tr>
+          <!-- Касуми  -->
+          <tr>
+            <td data-label="Персонаж: Рен Амамия" class="KasumiBlock">
+              <a href="link-to-page1.html" class="character-link">
+                <div class="image-container">
+
+                  <img src="https://i.ibb.co/PMTq7Z1/Kasumi-Icon.png" id="toggle-image" alt="Касуми Йосидзава"
+                    class="character-icon">
+
+                </div>
+                <div class="spoiler-wrapper">
+                  <span class="character-name-Kasumi-spoiler spoiler" tabindex="0">Sumire Yoshizawa</span>
+                  <div class="spoiler-overlay">Спойлеры к Royal версии</div>
+                </div>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src=" MainScrtpForPerson.js"></script>
+    <script src="ScriptForCharactersPage.js"></script>
+
+    <footer>
+      <div class="footer-top-container">
+        <div class="left-side">
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Term and Conditions</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+
+        <div class="right-side">
+
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="footer-bottom-container">
+        <div class="copyright">
+
+          <img src="https://i.ibb.co/J50cr4F/logoP5R.png" width="100px" height="100px" alt="">
+          <p>2024</p>
+        </div>
+        <div class="social-media-icons">
+          <img src="https://i.ibb.co/n7S2Xc7/youtube-1.png" alt="иконка ютуба">
+          <img src="https://i.ibb.co/CJM6Cgm/telegram.png" alt="иконка телеграмма">
+          <img src="https://i.ibb.co/hYLnc0B/vk.png" alt="иконка вк">
+        </div>
+      </div>
+    </footer>
+
+
+
+</body>
+
+</html>

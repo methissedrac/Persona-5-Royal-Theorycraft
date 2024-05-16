@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, shrink-to-fit=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta name="theme-color" content="#FF0000">
+
+<title>Calculator</title>
+
+<link rel="stylesheet" href="CalcStyle.css">
+<link rel="stylesheet" href="Diz.css">
+<link rel="stylesheet" href="animate.css">
+
+
+<!-- начало подключения картинок и манифеста для PWA -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/PersonaPWA.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#000000">
+<!-- конец подключения PWA и манифеста  -->
+
+<!-- Для плавных анимаций текста, кнопок и т.д. -->
+<script src="wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
+<body>
+  <!-- кнопка вверх (наверное) -->
+  <div class="btn-up btn-up_hide"></div>
+
+
+  <header>
+
+    <img class="logoP5R" src="../PictursForProject/logoP5R.png" alt="logo">
+
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav_menu_Persona">
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <h2 class="logo">
+        <a href="sssPers.html">Persona.ru</a>
+      </h2>
+      <ul>
+        <li><a href="sssPers.html" class="transition">Главная страница</a>
+        <li class="accordion-section">
+          <input type="checkbox" id="characters-toggle" hidden>
+          <label for="characters-toggle" class="accordion-title">Персонажи</label>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="CharactersPerosona5.html" target="_blank">Играбельные персонажи</a></li>
+              <li><a href="#Confidants" target="_blank">Конфиданты</a></li>
+              <!-- <li>Персонаж 3</li> -->
+              <!-- Добавить дополнительные пункты здесь -->
+            </ul>
+          </div>
+        </li>
+        <!--target blank для открытия вкладки в отдельном окне-->
+        <li><a href="GalleryImageForP5R.html">Галерея</a>
+        <li><a href="PalaceMainDoc.html">Дворцы</a>
+        <li><a href="TheorycraftMainPage.html">Теорикрафт</a>
+        <li><a href="#DataBase">Словарь</a>
+        <li><a href="#Compendium">Компендиум</a>
+        <li><a href="#Achivment">Достижения</a>
+      </ul>
+    </nav>
+    <div class="mask-content"></div>
+
+  </header>
+  <div class="calculator-container">
+    <!-- Калькулятор для физического оружия -->
+    <h2 class="title">Калькулятор урона для физического оружия</h2>
+    <form id="physicalDamageCalc">
+      <label for="weaponPower">Мощность оружия: </label>
+      <input type="number" id="weaponPower" name="weaponPower"><br>
+
+      <label for="strengthStats">Показатель Силы: </label>
+      <input type="number" id="strengthStats" name="strengthStats"><br>
+
+      <label for="targetArmorPhysical">Броня цели: </label>
+      <input type="number" id="targetArmorPhysical" name="targetArmorPhysical"><br>
+
+      <label for="enduranceStatPhysical">Показатель Выносливости цели: </label>
+      <input type="number" id="enduranceStatPhysical" name="enduranceStatPhysical"><br>
+
+      <button type="submit">Рассчитать урон</button>
+    </form>
+
+    <div id="physicalResult">Итоговый урон: 0</div>
+
+    <!-- Калькулятор для магических навыков -->
+    <h2 class="title">Калькулятор урона для магических навыков</h2>
+    <form id="magicDamageCalc">
+      <label for="skillBasePower">Базовая мощность навыка:</label>
+      <input type="number" id="skillBasePower" name="skillBasePower"><br>
+
+      <label for="magicStats">Характеристика Магии:</label>
+      <input type="number" id="magicStats" name="magicStats"><br>
+
+      <label for="targetArmorMagic">Броня цели:</label>
+      <input type="number" id="targetArmorMagic" name="targetArmorMagic"><br>
+
+      <label for="enduranceStatMagic">Показатель Выносливости цели:</label>
+      <input type="number" id="enduranceStatMagic" name="enduranceStatMagic"><br>
+
+      <button type="submit">Рассчитать урон</button>
+    </form>
+
+    <div id="magicResult">Итоговый урон: 0</div>
+
+    <!-- Калькулятор защиты врага -->
+    <h2 class="title">Калькулятор защиты врага</h2>
+    <form id="defenseCalc">
+      <label for="basePower">Базовая мощность:</label>
+      <input type="number" id="basePower" name="basePower"><br>
+
+      <label for="enemyEndurance">Выносливость врага:</label>
+      <input type="number" id="enemyEndurance" name="enemyEndurance"><br>
+
+      <label for="armorDefense">Защита брони:</label>
+      <input type="number" id="armorDefense" name="armorDefense"><br>
+
+      <button type="button" onclick="calculateDefense()">Рассчитать защиту</button>
+    </form>
+
+    <div id="defenseResult">Защита врага: 0</div>
+  </div>
+
+  <div class="formulas">
+    <h2 class="title">Используемые формулы</h2>
+    <p id="physicalFormula">Физический урон: <span class="formula">√(1/2 * Сила Оружия) * √(Сила Персоны)</span></p>
+    <p id="magicFormula">Магический урон: <span class="formula">√(Сила Скилла) * √(Значение нужной для скилла
+        характеристики) </span></p>
+    <p id="defenseFormula">Защита врага: <span class="formula">Base Power / √((Endurance * 8) + Armor Defense)</span>
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Калькулятор для физического оружия
+      document.getElementById('physicalDamageCalc').onsubmit = function (event) {
+        event.preventDefault();
+
+        var weaponPower = parseFloat(document.getElementById('weaponPower').value);
+        var strengthStats = parseFloat(document.getElementById('strengthStats').value);
+        var targetArmor = parseFloat(document.getElementById('targetArmorPhysical').value);
+        var enduranceStat = parseFloat(document.getElementById('enduranceStatPhysical').value);
+
+        var physicalDamage = Math.sqrt(weaponPower / 2) * Math.sqrt(strengthStats);
+        physicalDamage /= Math.sqrt(targetArmor + enduranceStat);
+
+        document.getElementById('physicalResult').innerHTML = 'Итоговый урон: ' + physicalDamage.toFixed(2);
+      };
+
+      // Калькулятор для магических навыков
+      document.getElementById('magicDamageCalc').onsubmit = function (event) {
+        event.preventDefault();
+
+        var skillBasePower = parseFloat(document.getElementById('skillBasePower').value);
+        var magicStats = parseFloat(document.getElementById('magicStats').value);
+        var targetArmor = parseFloat(document.getElementById('targetArmorMagic').value);
+        var enduranceStat = parseFloat(document.getElementById('enduranceStatMagic').value);
+
+        var magicDamage = Math.sqrt(skillBasePower) * Math.sqrt(magicStats);
+        magicDamage /= Math.sqrt(targetArmor + enduranceStat);
+
+        document.getElementById('magicResult').innerHTML = 'Итоговый урон: ' + magicDamage.toFixed(2);
+      };
+    });
+    function calculateDefense() {
+      // Получаем значения из полей ввода
+      var basePower = parseFloat(document.getElementById('basePower').value);
+      var enemyEndurance = parseFloat(document.getElementById('enemyEndurance').value);
+      var armorDefense = parseFloat(document.getElementById('armorDefense').value);
+
+      // Проверяем, что все значения были корректно введены и являются числами
+      if (isNaN(basePower) || isNaN(enemyEndurance) || isNaN(armorDefense)) {
+        alert('Пожалуйста, введите все значения корректно.');
+        return;
+      }
+
+      // Рассчитываем защиту врага по формуле
+      var defense = basePower / Math.sqrt((enemyEndurance * 8) + armorDefense);
+
+      // Отображаем результат в элементе с id 'defenseResult'
+      document.getElementById('defenseResult').innerText = 'Защита врага: ' + defense.toFixed(2);
+    }
+
+
+
+  </script>
+</body>
+
+</html>

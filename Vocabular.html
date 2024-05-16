@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#FF0000">
+  <title>Словарь</title>
+  <script>
+    function updateMetaThemeColor() {
+      // Определить предпочтение пользователя для темного режима
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const themeColorMetaTag = document.querySelector('meta[name=theme-color]');
+
+      if (isDarkMode) {
+        themeColorMetaTag.setAttribute('content', '#000000'); // Темный режим цвета
+      } else {
+        themeColorMetaTag.setAttribute('content', '#ffffff'); // Светлый режим цвета
+      }
+    }
+
+    // Инициализировать при загрузке
+    updateMetaThemeColor();
+
+    // Обновить при изменении схемы
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      updateMetaThemeColor();
+    });
+  </script>
+
+  <link rel="stylesheet" href="Diz.css">
+  <link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="VCBStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/wQFvJZM/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/88mhQgz/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/Fq721b5/favicon-16x16.png">
+  <link rel="manifest" href="/PersonaPWA.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#000000">
+  <!-- конец подключения PWA и манифеста  -->
+  <!-- Для плавных анимаций текста, кнопок и т.д. -->
+  <script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <!-- обычный jquery для плавного появления страницы -->
+  <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+  <!-- обычный jquery для плавного появления страницы -->
+</head>
+
+<body>
+  <!-- кнопка вверх (наверное) -->
+  <div class="btn-up btn-up_hide"></div>
+
+
+  <header>
+
+    <img class="logoP5R" src="https://i.ibb.co/5vL405N/logoP5R.png" alt="logoP5R"></a>
+
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav_menu_Persona">
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <h2 class="logo">
+        <a href="sssPers.html">Persona.ru</a>
+      </h2>
+      <ul>
+        <li><a href="sssPers.html" class="transition">Главная страница</a>
+        <li class="accordion-section">
+          <input type="checkbox" id="characters-toggle" hidden>
+          <label for="characters-toggle" class="accordion-title">Персонажи</label>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="CharactersPerosona5.html">Играбельные персонажи</a></li>
+              <li><a href="#Confidants">Конфиданты</a></li>
+              <!-- <li>Персонаж 3</li> -->
+              <!-- Добавить дополнительные пункты здесь -->
+            </ul>
+          </div>
+        </li>
+        <!--target blank для открытия вкладки в отдельном окне, но пока не имеет-->
+        <li><a href="GalleryImageForP5R.html">Галерея</a>
+        <li><a href="PalaceMainDoc.html">Дворцы</a>
+        <li><a href="TheorycraftMainPage.html">Теорикрафт</a>
+        <li><a href="#DataBase">Словарь терминов</a>
+        <li><a href="#Compendium">Компендиум</a>
+        <li><a href="#Achivment">Достижения</a>
+      </ul>
+    </nav>
+    <div class="mask-content"></div>
+
+  </header>
+
+  <section class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" oninput="searchDictionary()" placeholder="Поиск...">
+      <button class="search-button" onclick="searchDictionary()">Поиск</button>
+    </div>
+
+    <!-- Контейнер для слов словаря -->
+    <div id="dictionaryContent">
+      <!-- Все термины словаря помещены здесь и имеют класс "term" -->
+      <div class="term">
+        <h2 class="term-title">Persona</h2>
+        <p>Сущность, являющаяся воплощением личности и призванная бороться с тенями.</p>
+      </div>
+      <!-- Другие термины словаря помещены подобным образом -->
+      <div class="term">
+        <h2 class="term-title">Palace</h2>
+        <p>Искаженное воплощение когнитивных взглядов человека на окружающий мир, которое фантомные воры пытаются
+          исследовать и изменить.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Shadow</h2>
+        <p>Темная сторона человеческих желаний, которая принимает физическую форму в Метаверсе.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Confidant</h2>
+        <p>Союзники, которые вступают в доверительные отношения с главным героем, что позволяет разблокировать новые
+          способности и усилить персон.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Memento</h2>
+        <p>Общее название для различных воспоминаний, которые могут влиять на текущее состояние персонажа и его выбор.
+        </p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Metaverse</h2>
+        <p>Параллельная реальность, которая отражает когнитивное восприятие и искаженную психику людей.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Velvet Room</h2>
+        <p>Таинственное место, которое существует между сознанием и подсознанием, где персонажи могут сливаться с
+          Persona и получать новые.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Arcana</h2>
+        <p>Категории, к которым относятся различные Persona, соответствующие карточному Таро, каждая из которых имеет
+          свои уникальные особенности и ассоциации.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Wild Card</h2>
+        <p>Способность главного героя носить множество Persona одновременно, отражая концепцию множественности самого
+          себя.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Cognition</h2>
+        <p>Процесс, который позволяет персонажам воспринимать и интерпретировать свою реальность в Метаверсе, и может
+          быть искажён личными убеждениями и чувствами.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">All-Out Attack</h2>
+        <p>Мощная командная атака, выполняемая группой персонажей после успешного оглушения всех противников на поле
+          боя.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Treasure Demon</h2>
+        <p>Редкие сущности в Метаверсе, которые могут быть использованы для получения ценных ресурсов или усиления
+          способностей Persona через слияние.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Social Link</h2>
+        <p>Предшественник механики Confidant, представляющий отношения и доверие между персонажами, которые усиливают
+          Persona и открывают новые навыки.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Phantom Thieves</h2>
+        <p>Группа персонажей, стремящаяся изменить искаженные желания индивидов, крадя их "сердце" через воздействие на
+          их когнитивные миры.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Shadow Self</h2>
+        <p>Искаженная версия человека в Метаверсе, которая проявляется из его подавленных желаний и теней.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Grappling Hook</h2>
+        <p>Инструмент, дающий Рену возможность достигать новых мест, секретных областей в Метаверсе и быстро сокращать
+          дистанцию с врагами.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Safe Room</h2>
+        <p>Зоны отдыха в когнитивных подземельях, где персонажи могут отдыхать, сохранять игру и обсуждать стратегии.
+        </p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Third Eye</h2>
+        <p>Способность, позволяющая игрокам видеть скрытые предметы, недоступные обычному взгляду. Позволяет увидеть
+          вход в Velvet Room.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Mementos</h2>
+        <p>Общее бессознательное общества, проявляемое в виде подземного лабиринта, которое фантомные воры исследуют,
+          чтобы изменить сердца людей.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Velvet Room</h2>
+        <p>Тюрьма между сознанием и подсознанием, в которой узники будут подвергаться испытаниям ради своего
+          исправления.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Metaverse Navigator</h2>
+        <p>Приложение на смартфоне, позволяющее фантомным ворам входить в Метаверс и идентифицировать мир искаженных
+          взглядов отдельных личностей.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Слияние</h2>
+        <p>Методика объединения нескольких персон с целью создания новой, более мощной, с использованием особых
+          комбинаций для достижения желаемого результата.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Наследование Навыков</h2>
+        <p>Процесс, позволяющий персоне наследовать умения от "предков" в процессе слияния, что является ключом к
+          формированию мощных боевых стратегий.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Оптимизация Статистик</h2>
+        <p>Процесс максимизации ключевых характеристик персоны для достижения максимальной эффективности в бою.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Казнь</h2>
+        <p>Механизм усиления персоны через жертву другой, приводящий к получению дополнительного опыта и возможности
+          изучения новых навыков.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Аларм</h2>
+        <p>Особое состояние в Velvet Room, которое повышает вероятность возникновения необычных и более сильных слияний
+          персон, а также увеличивает шансы на получение редких навыков и улучшенные статусные характеристики.</p>
+      </div>
+
+      <div class="term">
+        <h2 class="term-title">Формула урона</h2>
+        <p>Это математическая модель, которая используется для расчёта количества урона, наносимого в бою. Формула
+          учитывает множество переменных, включая силу атакующего, силу персоны, силу навыка, уязвимости и сопротивления
+          цели, текущие статусные баффы и дебаффы, а также прочие условия боя. Точная формула может быть сложной и не
+          полностью раскрыта разработчиками, но знание основ позволяет игрокам максимально эффективно использовать своих
+          персон в сражениях</p>
+      </div>
+
+      <div class="term">
+        <h2 class="term-title">Теорикрафт</h2>
+        <p>Это процесс анализа и планирования стратегий и комбинаций в игровых механиках для достижения оптимального
+          игрового результата. В контексте Persona 5 Royal - планирование наилучших комбинаций персон, расчёты для
+          создания сильнейших персон через систему слияния, а также разработку стратегий для боев и
+          выполнения заданий. Теорикрафт помогает игрокам понять, как работают игровые системы, и использовать их себе
+          на пользу</p>
+      </div>
+
+      <div class="term">
+        <h2 class="term-title">Минмакс</h2>
+        <p>Минимакс - (от англ. "minimize" - минимизировать и "maximize" - максимизировать) – это подход в играх, при
+          котором игрок
+          старается уменьшить (минимизировать) ненужные или менее важные характеристики своего персонажа или персоны в
+          пользу главных или более важных (максимизировать), чтобы усилить определённые аспекты игрового персонажа. В
+          Persona 5 Royal, это может включать в себя фокусировку на определённых статистиках персоны, чтобы
+          максимизировать эффективность в определённой роли, например, увеличение магических атак или оборонительных
+          параметров.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Skill Point Managment</h2>
+        <p>Подход к управлению запасом прочности и SP (очки действия) персон во время исследования дворцов и прохождения
+          сражений, что является критичным для эффективной игры.</p>
+      </div>
+      <div class="term">
+        <h2 class="term-title">Очки действий (SP, skill point)</h2>
+        <p>Игровой ресурс, потребляемый персонажами для использования магических навыков в бою. Каждый навык требует
+          определенное количество SP для активации. Эффективное управление SP чрезвычайно важно для поддержания боевой
+          готовности команды, особенно во время продолжительных исследований дворцов или прохождения многочисленных боев
+          подряд.</p>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <script src="VocJs.js"></script>
+  <script src="MainScrtpForPerson.js"></script>
+
+  <footer class="forSlovar">
+    <div class="footer-top-container">
+      <div class="left-side">
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Term and Conditions</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="right-side">
+
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="footer-bottom-container">
+      <div class="copyright">
+
+        <img src="https://i.ibb.co/J50cr4F/logoP5R.png" width="100px" height="100px" alt="">
+        <p>2024</p>
+      </div>
+      <div class="social-media-icons">
+        <img src="https://i.ibb.co/n7S2Xc7/youtube-1.png" alt="иконка ютуба">
+        <img src="https://i.ibb.co/CJM6Cgm/telegram.png" alt="иконка телеграмма">
+        <img src="https://i.ibb.co/hYLnc0B/vk.png" alt="иконка вк">
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
