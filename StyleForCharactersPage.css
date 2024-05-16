@@ -4,28 +4,28 @@
 
 @font-face {
   font-family: "PersonFontForNameGame";
-  src: url("../Fontss/Persona5main.ttf");
+  src: url("Fontss/Persona5main.ttf");
 }
 
 /* использую для бокового меню, а конкретно для вкладок */
 
 @font-face {
   font-family: "PersonFontForMenu";
-  src: url("../Fontss/Markin-LT-Ultra-Bold.ttf");
+  src: url("Fontss/Markin-LT-Ultra-Bold.ttf");
 }
 
 /* пока что хочу использовать для текста основного блока */
 
 @font-face {
   font-family: "PersonFontForMainText";
-  src: url("../Fontss/Expose-Regular.otf");
+  src: url("Fontss/Expose-Regular.otf");
 }
 
 /* пока не решил для чего конкретно, но пусть будет. Может быть для имен персов будет */
 
 @font-face {
   font-family: "PersonFontForCharactersGuide";
-  src: url("../Fontss/HEAVYHEA.ttf");
+  src: url("Fontss/HEAVYHEA.ttf");
 }
 
 * {
