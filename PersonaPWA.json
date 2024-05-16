@@ -1,0 +1,47 @@
+{
+  "name": "Persona 5 Royal Theorycraft",
+  "short_name": "P5RTC",
+  "start_url": "sssPers.html",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#db4938",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/apple-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/apple-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/apple-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/apple-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/logoP5R512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    }
+  ]
+}
