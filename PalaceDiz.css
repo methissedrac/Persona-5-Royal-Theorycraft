@@ -1,0 +1,614 @@
+/* шрифты */
+
+/* использую для заголовка */
+
+@font-face {
+  font-family: "PersonFontForNameGame";
+  src: url("../Fontss/Persona5main.ttf");
+}
+
+/* использую для бокового меню, а конкретно для вкладок */
+
+@font-face {
+  font-family: "PersonFontForMenu";
+  src: url("../Fontss/Markin-LT-Ultra-Bold.ttf");
+}
+
+/* пока что хочу использовать для текста основного блока */
+
+@font-face {
+  font-family: "PersonFontForMainText";
+  src: url("../Fontss/Expose-Regular.otf");
+}
+
+/* пока не решил для чего конкретно, но пусть будет. Может быть для имен персов будет */
+
+@font-face {
+  font-family: "PersonFontForCharactersGuide";
+  src: url("../Fontss/HEAVYHEA.ttf");
+}
+
+@media screen and (max-width: 320px) {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  /* width: 100%; */
+  color: #000;
+  overflow-x: hidden;
+  /* скрывает скроллбар */
+  -ms-overflow-style: none;
+  /* Для Internet Explorer 10+ и Edge */
+  scrollbar-width: none;
+  /* Для Firefox */
+}
+
+/* Аккаордион для таблицы персонажей основной игры (надо убрать потом) */
+.accordion {
+  width: 90%;
+  height: fit-content;
+  margin: 20px auto;
+  /* border: 1px solid #cccccc; */
+  border-radius: 5px;
+}
+
+
+
+.accordion-toggle {
+  font-family: 'Arial', sans-serif;
+  background: black;
+  color: red;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 15px 0;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background: red;
+  color: white;
+}
+
+.accordion-hint {
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-toggle::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-toggle.active::after {
+  transform: rotate(-180deg);
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.accordion-content-for-palaces {
+  height: 100%;
+  box-sizing: border-box;
+  /* Скрыть содержимое по умолчанию */
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+  /* Добавлено для корректной анимации */
+  margin-bottom: 60px;
+  background: #2f3640;
+  /* Тёмный фон */
+  padding: 0 20px;
+  /* Отступы */
+  border-radius: 5px;
+  /* Скругление углов */
+}
+
+/* Добавлен новый класс для стилизации активного содержимого аккордеона */
+
+.accordion-content-for-palaces.active {
+  display: block;
+  contain: strict;
+  /* Произвольное значение, достаточное для показа всего содержимого */
+  max-height: 500px;
+
+}
+
+
+.palaces-table {
+  contain: strict;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "PersonFontForMenu";
+}
+
+
+.palaces-table td,
+.palaces-table th {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.palaces-table td {
+  text-align: center;
+  /* Выравнивание по центру */
+  padding: 10px;
+  /* Отступы внутри ячеек */
+  border: 2px solid #e84118;
+  /* Границы ячеек */
+  background: #353b48;
+  /* Фоновый цвет ячеек */
+  transition: background-color 0.3s;
+  /* Анимация изменения фона */
+  vertical-align: top;
+}
+
+.palaces-table td:hover {
+  background-color: #e84118;
+}
+
+.palace-icon {
+  max-width: 180px;
+  /* Средний размер иконки */
+  max-height: 140px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  /* Делаем иконку круглой */
+  margin-bottom: 5px;
+  /* Отступ снизу */
+}
+
+.palace-link {
+  text-decoration: none;
+  /* Убрать подчёркивание */
+  color: #f5f6fa;
+  /* Цвет текста */
+  transition: color 0.3s;
+  /* Анимация изменения цвета */
+}
+
+.palace-link:hover {
+  color: #353b48;
+  /* Цвет текста при наведении */
+}
+
+.palace-name {
+  font-family: "PersonFontForMenu";
+  font-size: 35px;
+  color: #f8f9fa;
+}
+
+.palace-name:hover {
+  text-decoration: underline;
+  /* Подчёркивание имени персонажа при наведении */
+}
+
+.palace-icon-Niijima {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  max-height: 120px;
+}
+
+.palace-name-Niijima {
+  position: relative;
+  margin: 0 auto;
+  font-size: 35px;
+}
+
+.palace-name-DoMs {
+  position: relative;
+  margin: 0 auto;
+  font-size: 35px;
+}
+
+.palace-icon-DoMs {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  max-height: 120px;
+}
+
+@media (max-width: 320px) {
+
+  .palace-icon {
+    width: 70%;
+    /* уменьшение ширины иконки на 20% */
+    height: auto;
+    /* сохранение пропорций иконки */
+  }
+}
+
+@media (max-width: 320px) {
+
+  .palace-icon-DoMs,
+  .palace-icon-Niijima,
+  #toggle-image {
+    width: 50%;
+    /* уменьшение ширины иконки на 20% */
+    height: auto;
+    /* сохранение пропорций иконки */
+  }
+}
+
+
+.palace-icon-Ocumura,
+.palace-icon {
+  max-width: 180px;
+  /* Средний размер иконки */
+  max-height: 140px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+@media (max-width: 320px) {
+
+  .palace-icon {
+    width: 80%;
+    /* уменьшение ширины иконки на 20% */
+    height: auto;
+    /* сохранение пропорций иконки */
+  }
+
+  .palace-icon-Ocumura {
+    width: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+
+
+  .palace-icon-Niijima,
+  #toggle-image,
+  .palace-icon-DoMs {
+    width: 70%;
+    /* уменьшение ширины иконки на 20% */
+    height: auto;
+    /* сохранение пропорций иконки */
+  }
+
+
+}
+
+@media (max-width: 767px) {
+
+  .palace-name,
+  .palace-name-DoMs,
+  .palace-name-Niijima {
+    font-size: 14px;
+    /* или любой другой меньший размер шрифта, который вы считаете подходящим */
+  }
+
+  th,
+  td {
+    padding: 5px;
+    /* Опционально: уменьшить padding в ячейках для более компактной таблицы */
+  }
+}
+
+@media (max-width: 767px) {
+  .palace-name-Maruki-spoiler {
+    font-size: 14px;
+  }
+}
+
+
+.spoiler-wrapper {
+  position: relative;
+  /* Сделать контейнер относительно позиционированным */
+  display: inline-block;
+  /* Обеспечить, чтобы обертка соответствовала размеру содержимого */
+}
+
+.palace-name-Maruki-spoiler {
+  border-radius: 4px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0);
+  /* Прозрачный цвет текста */
+  transition: color 0.5s ease;
+  font-size: 35px;
+}
+
+.spoiler-overlay {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: -30px;
+  bottom: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  /* Указатель мыши не взаимодействует с предупреждением */
+  font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1600 - 320)));
+  /* Настройка размера шрифта для предупреждения */
+}
+
+.palace-name-Maruki-spoiler:hover,
+.palace-name-Maruki-spoiler:active,
+.palace-name-Maruki-spoiler:focus {
+  color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.spoiler-wrapper:hover .spoiler-overlay,
+.spoiler-wrapper:active .spoiler-overlay,
+.spoiler-wrapper:focus .spoiler-overlay {
+  display: none;
+  /* Скрываем предупреждение при наведении или фокусе */
+}
+
+.MarukiBlock {
+  z-index: 999;
+}
+
+.spoiler-wrapper {
+  position: relative;
+  /* Сделать контейнер относительно позиционированным */
+  display: inline-block;
+  /* Обеспечить, чтобы обертка соответствовала размеру содержимого */
+  z-index: 999;
+
+}
+
+.palace-name-Maruki-spoiler {
+  border-radius: 4px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0);
+  /* Прозрачный цвет текста */
+  transition: color 0.5s ease;
+  font-size: 35px;
+  z-index: 999;
+}
+
+
+.palace-name-Maruki-spoiler:hover,
+.palace-name-Maruki-spoiler:active,
+.palace-name-Maruki-spoiler:focus {
+  color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.spoiler-wrapper:hover .spoiler-overlay,
+.spoiler-wrapper:active .spoiler-overlay,
+.spoiler-wrapper:focus .spoiler-overlay {
+  display: none;
+  /* Скрываем предупреждение при наведении или фокусе */
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+  .palace-name-Maruki-spoiler {
+    color: rgba(0, 0, 0, 1);
+    /* установка непрозрачного цвета текста */
+    background-color: transparent;
+    /* сделать фон прозрачным */
+  }
+
+  .spoiler-overlay {
+    display: none;
+    /* скрыть оверлей спойлера */
+  }
+}
+
+@media (max-width: 767px) {
+
+  .palace-name-Maruki-spoiler:hover,
+  .palace-name-Maruki-spoiler:active,
+  .palace-name-Maruki-spoiler:focus,
+  .palace-name-Maruki-spoiler {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .palace-name-Maruki-spoiler:hover,
+  .palace-name-Maruki-spoiler:active,
+  .palace-name-Maruki-spoiler:focus,
+  .palace-name-Maruki-spoiler {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .palaces-table {
+    width: 100%;
+    border: 0;
+  }
+
+  .palaces-table thead {
+    display: none;
+    /* Если есть, скрываем шапку таблицы на мобильных устройствах */
+  }
+
+  .palaces-table tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #e84118;
+  }
+
+  .palaces-table td {
+    display: block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .palaces-table td .palace-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .palace-icon {
+    margin-bottom: 8px;
+    /* Добавляем отступ между изображением и текстом */
+    width: 130px;
+    /* Изменяем размер значка персонажа */
+    height: auto;
+  }
+
+  .palace-icon-Niijima,
+  .palace-icon-DoMs,
+  #toggle-image {
+    margin-bottom: 8px;
+    width: 80px;
+    height: auto;
+  }
+
+}
+
+/* для footer */
+
+footer {
+  position: relative;
+  /* margin-top: -60px; */
+  /* Отрицательный отступ равный высоте футера */
+  height: 150px;
+  /* Высота футера */
+  z-index: -1;
+
+}
+
+.footer-top-container {
+  padding-top: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-top-container .left-side ul {
+  display: flex;
+}
+
+.footer-top-container .left-side ul li {
+  margin: 0rem 2rem;
+}
+
+.footer-top-container .left-side ul li a {
+  color: #000;
+  font-size: 1.7rem;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+footer .line {
+  margin-top: 3rem;
+  width: 100%;
+  height: 0.1rem;
+  background: rgba(0, 0, 0, .1);
+
+}
+
+.footer-bottom-container {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-container .copyright {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-bottom-container .copyright p {
+  font-size: 1.5rem;
+}
+
+.footer-bottom-container .social-media-icons img {
+  width: 20px;
+  height: 20px;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
+}
+
+.footer-bottom-container .social-media-icons {
+  display: flex;
+  align-items: center;
+}
+
+
+@media(max-width: 1115px) {
+  .footer-top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+@media(max-width: 677px) {
+  .footer-top-container .left-side ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 436px) {
+  .footer-top-container .right-side {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-top-container .left-side ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+  .copyright .imglogop5r {
+    margin-left: 10px;
+  }
+}

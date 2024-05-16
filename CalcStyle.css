@@ -1,0 +1,123 @@
+.calculator-container {
+  font-family: 'Helvetica', sans-serif;
+  /* Подойдет любой современный шрифт, если нет доступа к шрифту Persona 5 */
+  color: #ffffff;
+  background: #0d0d0d;
+  /* Темный фон */
+  border: 1px solid #f44336;
+  /* Красная линия, характерная для Persona 5 */
+  padding: 20px;
+  margin-top: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 640px;
+  border-radius: 5px;
+}
+
+.title {
+  color: #f44336;
+  /* Красный цвет заголовка */
+  margin-bottom: 20px;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid #f44336;
+  /* Подчеркивание заголовка */
+  text-align: center;
+  /* Центрирование текста */
+}
+
+form {
+  margin-bottom: 20px;
+  /* Отступы между формами */
+}
+
+label {
+  margin-top: 10px;
+  /* Отступ для label */
+  display: block;
+  /* Заставляет label занимать свою собственную линию */
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  /* Отступ сверху для input */
+  margin-bottom: 15px;
+  /* Отступ снизу для input */
+  border-radius: 4px;
+  border: 1px solid #444;
+  /* Граница для input */
+  background: #333;
+  /* Фон поля ввода */
+  color: #f44336;
+  /* Красный цвет текста внутри input */
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  /* Отступ сверху для кнопки */
+  border-radius: 4px;
+  border: none;
+  color: #0d0d0d;
+  background-color: #f44336;
+  /* Красный фон кнопки */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  /* Плавное изменение фона при наведении */
+}
+
+button:hover {
+  background-color: #aa2e25;
+  /* Темно-красный фон при наведении */
+}
+
+#physicalResult,
+#magicResult,
+#defenseResult {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #222;
+  border-radius: 3px;
+  border-left: 5px solid #f44336;
+  /* Акцентная красная линия слева */
+}
+
+/* Стилизация блока с формулами */
+.formulas {
+  position: relative;
+  background: #1c1c1c;
+  /* Чуть отличающийся фон для выделения блока формул */
+  width: 60%;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  /* margin-top: 30px;
+  margin-bottom: 200px; */
+  /* Отступ сверху */
+  border-radius: 5px;
+  top: 50px;
+}
+
+.formulas .title {
+  /* Стилизация заголовка для блока с формулами */
+  padding-bottom: 10px;
+  /* Немного меньше отступ, чем у заголовков калькуляторов */
+}
+
+.formula {
+
+  font-weight: bold;
+  color: red;
+
+}
+
+#defenseFormula,
+#magicFormula,
+#physicalFormula {
+  margin-left: 40px;
+  color: white;
+}

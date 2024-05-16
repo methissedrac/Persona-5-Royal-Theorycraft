@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1c1d;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+section.container {
+  margin-top: 20px;
+  /* Отступ от header */
+  margin-left: 10%;
+  /* Отступ слева для смещения к центру */
+  margin-right: 10%;
+  /* Отступ справа для симметрии */
+  background: #2d2f34;
+  box-sizing: border-box;
+  color: #dadada;
+}
+
+.dictionary {
+  background-color: #262626;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+  text-align: center;
+  /* Пункты меню теперь выровнены по центру */
+}
+
+.menu a {
+  display: inline-block;
+  /* Элементы меню будут в одной строке */
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a:focus {
+  color: #e0115f;
+  transform: translateY(-3px);
+  /* Поднимает ссылку при наведении */
+  border-bottom-color: #e0115f;
+}
+
+.term {
+  background-color: #1f1f1f;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: background-color 0.3s;
+  border-left: 3px solid #bf0a30;
+}
+
+.term:hover {
+  background-color: #2d2d2d;
+}
+
+.term-title {
+  margin: 0;
+  padding-bottom: 5px;
+  color: #bf0a30;
+  font-size: 24px;
+  border-bottom: 1px solid #bf0a30;
+}
+
+.description {
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  margin-right: -4px;
+  /* Убираем разрыв между инпутом и кнопкой */
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 11px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #bf0a30;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #e0115f;
+}
+
+/* для footer */
+
+footer.forSlovar {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1b1c1d;
+  height: 240px;
+  padding: 2rem;
+  padding-right: 0px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 740px) {
+  footer.forSlovar {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.footer-top-container {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-top-container .left-side ul {
+  display: flex;
+}
+
+.footer-top-container .left-side ul li {
+  margin: 0rem 2rem;
+}
+
+.footer-top-container .left-side ul li a {
+  color: white;
+  font-size: 1.7rem;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+footer .line {
+  margin-top: 3rem;
+  width: 100%;
+  height: 0.1rem;
+  background: rgba(0, 0, 0, .1);
+
+}
+
+.footer-bottom-container {
+  background-color: #1b1c1d;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-container .copyright {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-bottom-container .copyright p {
+  font-size: 1.5rem;
+}
+
+.footer-bottom-container .social-media-icons img {
+  width: 20px;
+  height: 20px;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
+}
+
+.footer-bottom-container .social-media-icons {
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media(max-width: 1115px) {
+  .footer-top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media(max-width: 677px) {
+  .footer-top-container .left-side ul {
+    /* display: flex; */
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width: 436px) {
+  .footer-top-container .right-side {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
